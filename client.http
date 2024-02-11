@@ -23,3 +23,8 @@ Content-Type: application/json
   "title": "Anythingelse",
   "description": "Example"
 }
+
+###
+
+# @name deleteById
+DELETE {{baseURL}}/tasks/6d56c6bb-1f2b-45f0-be32-1418a7c9add1
