@@ -15,6 +15,12 @@ class Database {
     fs.writeFile(DATABASE_PATH, JSON.stringify(this.#database));
   }
 
+  selectAll(table) {
+    const tableData = this.#database[table] ?? [];
+
+    return tableData;
+  }
+
   insert(table, data) {
     const doesTableExists = Array.isArray(this.#database[table]);
 
