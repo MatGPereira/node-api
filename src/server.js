@@ -11,12 +11,14 @@ const server = http.createServer(async (req, res) => {
   await toJson(req, res);
 
   if (method === 'GET' && url === '/tasks') {
-    return res.writeHead(200).end(JSON.stringify(database));
+    const tasks = database.selectAll('task');
+
+    return res.writeHead(200).end(JSON.stringify(tasks));
   }
 
   if (method === 'POST' && url === '/tasks') {
     const { title, description } = req.body;
-    const task = database.insert('tasks', {
+    const createdTask = database.insert('tasks', {
       id: randomUUID(),
       title,
       description,
@@ -25,7 +27,7 @@ const server = http.createServer(async (req, res) => {
       updated_at: null,
     });
 
-    return res.writeHead(201).end(JSON.stringify(task));
+    return res.writeHead(201).end(JSON.stringify(createdTask));
   }
 
   return res
