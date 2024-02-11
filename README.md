@@ -23,8 +23,8 @@ inicial deve ser `null`
 
 ## Requisitos funcionais
 
-- [ ] Criação de uma task
-- [ ] Listagem de todas as tasks
+- [x] Criação de uma task
+- [x] Listagem de todas as tasks
 - [ ] Atualização de uma task pelo `id`
 - [ ] Remover uma task pelo `id`
 - [ ] Marcar pelo `id` uma task completa
@@ -33,13 +33,13 @@ inicial deve ser `null`
 ## Regras de negócio
 
 * GET:
-  - [ ] Deve ser possível listar todas as tasks salvas no banco de dados
+  - [x] Deve ser possível listar todas as tasks salvas no banco de dados
   - [ ] Também deve ser possível realizar uma busca, filtrando as tasks pelo
   `title` e `description`
 * POST:
-  - [ ] Deve ser possível criar uma task no banco de dados enviando os campos
+  - [x] Deve ser possível criar uma task no banco de dados enviando os campos
   `title` e `description` por meio do `body` da requisição
-  - [ ] Ao criar uma task, os campos `id`, `created_at`, `updated_at` e
+  - [x] Ao criar uma task, os campos `id`, `created_at`, `updated_at` e
   `completed_at` devem ser preenchidos automaticamente conforme a orientação
   das propriedades a cima
   - [ ] Deve ser validado de as propriedades `title` e `description` estão
