@@ -26,8 +26,8 @@ inicial deve ser `null`
 - [x] Criação de uma task
 - [x] Listagem de todas as tasks
 - [ ] Atualização de uma task pelo `id`
-- [ ] Remover uma task pelo `id`
-- [ ] Marcar pelo `id` uma task completa
+- [x] Remover uma task pelo `id`
+- [x] Marcar pelo `id` uma task completa
 - [ ] Importar tasks em massa de um arquivo CSV
 
 ## Regras de negócio
@@ -59,12 +59,12 @@ inicial deve ser `null`
   - [ ] Deve ser validado de as propriedades `title` e `description` estão
   presentes no `body` da requisição
 * PATCH:
-  - [ ] Deve ser possível marcar ou desmarcar uma task como completa
-  - [ ] Antes da alteração deve ser feito uma validação se o `id` pertence
+  - [x] Deve ser possível marcar ou desmarcar uma task como completa
+  - [x] Antes da alteração deve ser feito uma validação se o `id` pertence
   a alguma task salva no banco. Caso o atributo `id` não exista
   no banco de dados deve ser retornado uma mensagem informando que o registro
   não existe
-  - [ ] O atributo `updated_at` deve ser atualizado sempre após essa rota ser
+  - [x] O atributo `updated_at` deve ser atualizado sempre após essa rota ser
   chamada
 * DELETE:
   - [x] Deve ser possível remover uma task pelo `id`
