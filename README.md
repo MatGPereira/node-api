@@ -34,7 +34,7 @@ inicial deve ser `null`
 
 * GET:
   - [x] Deve ser possível listar todas as tasks salvas no banco de dados
-  - [ ] Também deve ser possível realizar uma busca, filtrando as tasks pelo
+  - [x] Também deve ser possível realizar uma busca, filtrando as tasks pelo
   `title` e `description`
 * POST:
   - [x] Deve ser possível criar uma task no banco de dados enviando os campos
