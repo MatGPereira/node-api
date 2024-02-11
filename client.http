@@ -11,5 +11,5 @@ Content-Type: application/json
 
 {
   "title": "Any title",
-  "Description": "Any description"
+  "description": "Any description"
 }
