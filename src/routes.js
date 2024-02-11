@@ -71,6 +71,31 @@ const routes = [
       );
     },
   },
+  {
+    method: 'PATCH',
+    path: buildRoute('/tasks/:id/complete'),
+    handler(req, res) {
+      const { id } = req.params;
+      const task = database.findById('tasks', id);
+
+      if (!task) {
+        return res
+          .writeHead(400)
+          .end(
+            JSON.stringify({ statusCode: 400, message: 'Resource not found!' }),
+          );
+      }
+
+      database.updateById('tasks', id);
+
+      return res.writeHead(204).end(
+        JSON.stringify({
+          statusCode: 204,
+          message: 'Complete task successfully!',
+        }),
+      );
+    },
+  },
 ];
 
 export { routes };

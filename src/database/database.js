@@ -54,6 +54,16 @@ class Database {
     return data;
   }
 
+  updateById(table, id) {
+    const task = this.#database[table].find(row => {
+      return row.id === id;
+    });
+
+    task.completed_at = !task.completed_at;
+    task.updated_at = new Date();
+    this.#persist();
+  }
+
   deleteById(table, id) {
     const rowIndex = this.#database[table].findIndex(row => {
       return row.id === id;
