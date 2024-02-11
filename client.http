@@ -5,11 +5,21 @@ GET {{baseURL}}/tasks
 
 ###
 
+# @name filterTasksByTileOrDescription
+GET {{baseURL}}/tasks?title=Example
+
+###
+
+# @name filterTasksByTileAndDescription
+GET {{baseURL}}/tasks?description=Example&title='Anythingelse'
+
+###
+
 # @name registerTask
 POST {{baseURL}}/tasks
 Content-Type: application/json
 
 {
-  "title": "Any title",
-  "description": "Any description"
+  "title": "Anythingelse",
+  "description": "Example"
 }
