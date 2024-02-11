@@ -42,7 +42,7 @@ inicial deve ser `null`
   - [x] Ao criar uma task, os campos `id`, `created_at`, `updated_at` e
   `completed_at` devem ser preenchidos automaticamente conforme a orientação
   das propriedades a cima
-  - [ ] Deve ser validado de as propriedades `title` e `description` estão
+  - [x] Deve ser validado de as propriedades `title` e `description` estão
   presentes no `body` da requisição
 * PUT:
   - [ ] Deve ser possível atualizar uma task pelo `id`
@@ -68,7 +68,7 @@ inicial deve ser `null`
   chamada
 * DELETE:
   - [ ] Deve ser possível remover uma task pelo `id`
-  - Antes de realizar a remoção deve ser feito uma validação se o `id` pertence
+  - [ ] Antes de realizar a remoção deve ser feito uma validação se o `id` pertence
   a alguma task salva no banco. Caso o atributo `id` não exista
   no banco de dados deve ser retornado uma mensagem informando que o registro
   não existe
