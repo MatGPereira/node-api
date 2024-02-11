@@ -20,9 +20,14 @@ POST {{baseURL}}/tasks
 Content-Type: application/json
 
 {
-  "title": "Anythingelse",
+  "title": "Example",
   "description": "Example"
 }
+
+###
+
+# @name completedTask
+PATCH {{baseURL}}/tasks/21a59f56-dc3b-437a-845e-4a346033445a/complete
 
 ###
 
