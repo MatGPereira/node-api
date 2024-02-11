@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "standard"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "arrowParens": "avoid",
+        "semi": true
+      }
+    ],
+    "semi": [
+      "off",
+      true
+    ],
+    "comma-dangle": [
+      "off",
+      true
+    ]
+  }
+}
