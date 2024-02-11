@@ -47,28 +47,52 @@ const routes = [
     },
   },
   {
-    method: 'DELETE',
+    method: 'PUT',
     path: buildRoute('/tasks/:id'),
     handler(req, res) {
       const { id } = req.params;
       const task = database.findById('tasks', id);
 
       if (!task) {
-        return res
-          .writeHead(400)
-          .end(
-            JSON.stringify({ statusCode: 400, message: 'Resource not found!' }),
-          );
+        return res.writeHead(400).end(
+          JSON.stringify({
+            statusCode: 400,
+            message: 'Resource not found!',
+          }),
+        );
       }
 
-      database.deleteById('tasks', id);
+      try {
+        const { title, description } = req.body;
 
-      return res.writeHead(204).end(
-        JSON.stringify({
-          statusCode: 204,
-          message: 'Task deleted successfully!',
-        }),
-      );
+        database.update(
+          'tasks',
+          {
+            id,
+            title: title ?? task.title,
+            description: description ?? task.description,
+            created_at: task.created_at,
+            updated_at: task.updated_at,
+            completed_at: task.completed_at,
+          },
+          id,
+        );
+
+        return res.writeHead(204).end(
+          JSON.stringify({
+            statusCode: 204,
+            message: 'Task updated successfully!',
+          }),
+        );
+      } catch {
+        return res.writeHead(409).end(
+          JSON.stringify({
+            statusCode: 409,
+            message:
+              'You must enter the title and description fields to create a task!',
+          }),
+        );
+      }
     },
   },
   {
@@ -92,6 +116,31 @@ const routes = [
         JSON.stringify({
           statusCode: 204,
           message: 'Complete task successfully!',
+        }),
+      );
+    },
+  },
+  {
+    method: 'DELETE',
+    path: buildRoute('/tasks/:id'),
+    handler(req, res) {
+      const { id } = req.params;
+      const task = database.findById('tasks', id);
+
+      if (!task) {
+        return res
+          .writeHead(400)
+          .end(
+            JSON.stringify({ statusCode: 400, message: 'Resource not found!' }),
+          );
+      }
+
+      database.deleteById('tasks', id);
+
+      return res.writeHead(204).end(
+        JSON.stringify({
+          statusCode: 204,
+          message: 'Task deleted successfully!',
         }),
       );
     },
