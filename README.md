@@ -25,7 +25,7 @@ inicial deve ser `null`
 
 - [x] Criação de uma task
 - [x] Listagem de todas as tasks
-- [ ] Atualização de uma task pelo `id`
+- [x] Atualização de uma task pelo `id`
 - [x] Remover uma task pelo `id`
 - [x] Marcar pelo `id` uma task completa
 - [ ] Importar tasks em massa de um arquivo CSV
@@ -45,18 +45,18 @@ inicial deve ser `null`
   - [x] Deve ser validado de as propriedades `title` e `description` estão
   presentes no `body` da requisição
 * PUT:
-  - [ ] Deve ser possível atualizar uma task pelo `id`
-  - [ ] No `body` da requisição, deve receber somente o `title` e/ou `description`
+  - [x] Deve ser possível atualizar uma task pelo `id`
+  - [x] No `body` da requisição, deve receber somente o `title` e/ou `description`
   para serem atualizados
-  - [ ] Se for enviado somente `title`, significa que o `description` não pode
+  - [x] Se for enviado somente `title`, significa que o `description` não pode
   ser atualizado e vice-versa
-  - [ ] Antes de realizar a atualização deve ser feito uma validação se o `id`
+  - [x] Antes de realizar a atualização deve ser feito uma validação se o `id`
   pertence a uma task já salva o banco de dados. Caso o atributo `id` não exista
   no banco de dados deve ser retornado uma mensagem informando que o registro
   não existe
-  - [ ] O atributo `updated_at` deve ser atualizado sempre após essa rota ser
+  - [x] O atributo `updated_at` deve ser atualizado sempre após essa rota ser
   chamada
-  - [ ] Deve ser validado de as propriedades `title` e `description` estão
+  - [x] Deve ser validado de as propriedades `title` e `description` estão
   presentes no `body` da requisição
 * PATCH:
   - [x] Deve ser possível marcar ou desmarcar uma task como completa
