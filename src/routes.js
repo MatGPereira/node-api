@@ -10,6 +10,7 @@ const routes = [
     path: buildRoute('/tasks'),
     handler(req, res) {
       const { title, description } = req.query;
+
       const tasks = database.select(
         'tasks',
         title || description ? { title, description } : null,
@@ -22,18 +23,27 @@ const routes = [
     method: 'POST',
     path: buildRoute('/tasks'),
     handler(req, res) {
-      const { title, description } = req.body;
+      try {
+        const { title, description } = req.body;
+        const tasks = database.insert('tasks', {
+          id: randomUUID(),
+          title,
+          description,
+          created_at: new Date(),
+          updated_at: null,
+          completed_at: null,
+        });
 
-      const tasks = database.insert('tasks', {
-        id: randomUUID(),
-        title,
-        description,
-        created_at: new Date(),
-        updated_at: null,
-        completed_at: null,
-      });
-
-      return res.writeHead(201).end(JSON.stringify(tasks));
+        return res.writeHead(201).end(JSON.stringify(tasks));
+      } catch {
+        return res.writeHead(409).end(
+          JSON.stringify({
+            statusCode: 409,
+            message:
+              'You must enter the title and description fields to create a task!',
+          }),
+        );
+      }
     },
   },
 ];
