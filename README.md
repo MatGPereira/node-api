@@ -67,8 +67,8 @@ inicial deve ser `null`
   - [ ] O atributo `updated_at` deve ser atualizado sempre após essa rota ser
   chamada
 * DELETE:
-  - [ ] Deve ser possível remover uma task pelo `id`
-  - [ ] Antes de realizar a remoção deve ser feito uma validação se o `id` pertence
+  - [x] Deve ser possível remover uma task pelo `id`
+  - [x] Antes de realizar a remoção deve ser feito uma validação se o `id` pertence
   a alguma task salva no banco. Caso o atributo `id` não exista
   no banco de dados deve ser retornado uma mensagem informando que o registro
   não existe
