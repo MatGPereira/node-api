@@ -1,0 +1,15 @@
+@baseURL = http://localhost:3333
+
+# @name fetchAllTasks
+GET {{baseURL}}/tasks
+
+###
+
+# @name registerTask
+POST {{baseURL}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Any title",
+  "Description": "Any description"
+}
