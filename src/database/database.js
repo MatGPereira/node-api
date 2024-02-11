@@ -32,6 +32,14 @@ class Database {
     return tableData;
   }
 
+  findById(table, id) {
+    const task = this.#database[table].find(row => {
+      return row.id === id;
+    });
+
+    return task;
+  }
+
   insert(table, data) {
     const doesTableExists = Array.isArray(this.#database[table]);
 
@@ -44,6 +52,15 @@ class Database {
     this.#persist();
 
     return data;
+  }
+
+  deleteById(table, id) {
+    const rowIndex = this.#database[table].findIndex(row => {
+      return row.id === id;
+    });
+
+    this.#database[table].splice(rowIndex, 1);
+    this.#persist();
   }
 }
 

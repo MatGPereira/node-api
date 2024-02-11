@@ -46,6 +46,31 @@ const routes = [
       }
     },
   },
+  {
+    method: 'DELETE',
+    path: buildRoute('/tasks/:id'),
+    handler(req, res) {
+      const { id } = req.params;
+      const task = database.findById('tasks', id);
+
+      if (!task) {
+        return res
+          .writeHead(400)
+          .end(
+            JSON.stringify({ statusCode: 400, message: 'Resource not found!' }),
+          );
+      }
+
+      database.deleteById('tasks', id);
+
+      return res.writeHead(204).end(
+        JSON.stringify({
+          statusCode: 204,
+          message: 'Task deleted successfully!',
+        }),
+      );
+    },
+  },
 ];
 
 export { routes };
