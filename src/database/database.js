@@ -15,8 +15,19 @@ class Database {
     fs.writeFile(DATABASE_PATH, JSON.stringify(this.#database));
   }
 
-  selectAll(table) {
+  select(table, queryParams) {
     const tableData = this.#database[table] ?? [];
+
+    if (queryParams) {
+      return tableData.filter(
+        row =>
+          row.title === queryParams.title ||
+          row.description === queryParams.description ||
+          (row.title === queryParams.title &&
+            row.description === queryParams.description &&
+            queryParams !== null),
+      );
+    }
 
     return tableData;
   }
