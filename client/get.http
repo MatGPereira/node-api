@@ -1,0 +1,14 @@
+@baseURL = http://localhost:3333
+
+# @name fetchAllTasks
+GET {{baseURL}}/tasks
+
+###
+
+# @name filterTasksByTileOrDescription
+GET {{baseURL}}/tasks?title=Example
+
+###
+
+# @name filterTasksByTileAndDescription
+GET {{baseURL}}/tasks?description=Example&title='Anythingelse'

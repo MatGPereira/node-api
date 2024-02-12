@@ -1,0 +1,10 @@
+@baseURL = http://localhost:3333
+
+# @name registerTask
+POST {{baseURL}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Example",
+  "description": "Example"
+}
